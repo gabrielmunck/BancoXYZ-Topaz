@@ -8,8 +8,17 @@ interface BancoContextData {
     isLoading: boolean;
     user: any;
     token: string;
+
     fetchAccountInfo: () => void;
     accountInfo: { currency: string; accountBalance: number };
+
+    fetchTransactionHistory: () => void;
+    transactionHistory: Array<{
+        value: number;
+        date: string;
+        currency: string;
+        payeer: { document: string; name: string; };
+    }>;
 }
 
 const BancoContext = createContext<BancoContextData>({} as BancoContextData);
@@ -19,10 +28,8 @@ export function BancoProvider({ children }: PropsWithChildren) {
     const [isLoading, setIsLoading] = useState(false);
     const [user, setUser] = useState({ name: "", email: "" });
     const [token, setToken] = useState("");
-    const [accountInfo, setAccountInfo] = useState({
-        currency: "",
-        accountBalance: 0,
-    });
+    const [accountInfo, setAccountInfo] = useState({currency: "", accountBalance: 0,});
+    const [transactionHistory, setTransactionHistory] = useState([]);
 
      // Função que obtem o dinheiro em conta usando o token do usuario
     const fetchAccountInfo = async () => {
@@ -43,6 +50,23 @@ export function BancoProvider({ children }: PropsWithChildren) {
             });
         } catch (error) {
             console.log("Erro", "Falha ao obter informações da conta");
+        }
+    };
+
+    // Função que obtem o historico de transações do usuario
+    const fetchTransactionHistory = async () => {
+        try {
+            const response = await axios.get(
+                "https://n0qaa2fx3c.execute-api.us-east-1.amazonaws.com/default/transferList",
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            );
+            setTransactionHistory(response.data.transfers);
+        } catch (error) {
+            console.log("Erro", "Falha ao obter histórico de transações");
         }
     };
 
@@ -81,6 +105,8 @@ export function BancoProvider({ children }: PropsWithChildren) {
             setIsLoading(false);
         }
     };
+
+
     return (
         <BancoContext.Provider
             value={{
@@ -97,6 +123,8 @@ export function BancoProvider({ children }: PropsWithChildren) {
                 token,
                 fetchAccountInfo,
                 accountInfo,
+                fetchTransactionHistory,
+                transactionHistory,
             }}
         >
             {children}
