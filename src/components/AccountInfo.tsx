@@ -4,12 +4,15 @@ import { IoEye, IoEyeOff } from "react-icons/io5";
 
 const AccountInfo = () => {
     const [isVisible, setIsVisible] = useState(false);
+    const { accountInfo, fetchAccountInfo } = useBanco();
 
+
+    // Função que alterna a visibilidade do saldo
     const toggleVisibility = () => {
         setIsVisible(!isVisible);
         fetchAccountInfo();
     };
-    const { accountInfo, fetchAccountInfo } = useBanco();
+    
 
     return (
         <div className="w-full">

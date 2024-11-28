@@ -80,7 +80,6 @@ export function BancoProvider({ children }: PropsWithChildren) {
     }): Promise<boolean> => {
         try {
             setIsLoading(true);
-            console.log(isLoggedIn,"primeiro");
             const response = await axios.post(
                 "https://qf5k9fspl0.execute-api.us-east-1.amazonaws.com/default/login",
                 {
@@ -92,7 +91,7 @@ export function BancoProvider({ children }: PropsWithChildren) {
                 setIsLoggedIn(true);
                 setUser(response.data.user);
                 setToken(response.data.token);
-                console.log("Sucesso", "Login realizado com sucesso!");
+                console.log("Sucesso", "Login realizado!");
                 return true;
             } else {
                 console.log("Erro", "Credenciais inválidas");
