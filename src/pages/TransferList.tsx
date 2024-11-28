@@ -26,20 +26,28 @@ const TransferList = () => {
     const TransactionItem = ({ item }: { item: Transaction }) => (
         <div className="w-full p-4 border-b border-secondary transition-all duration-300 hover:bg-primary/10">
             <div className="text-text-light">
-                <p className="font-bold text-base mb-1">Nome:</p>
-                <p className="text-base mb-2">{item.payeer.name}</p>
-                <p className="font-bold text-base mb-1">RG:</p>
-                <p className="text-base mb-2">{item.payeer.document}</p>
-                <p className="font-bold text-base mb-1">Valor:</p>
-                <p className="text-base mb-2">
-                    {item.currency}:{" "}
-                    {parseFloat(item.value.toString()).toLocaleString("pt-BR", {
-                        minimumFractionDigits: 2,
-                        maximumFractionDigits: 2,
-                    })}
-                </p>
-                <p className="font-bold text-base mb-1">Data:</p>
-                <p className="text-base">{item.date}</p>
+                <div className="flex flex-col md:flex-row">
+                    <p className="font-bold text-base md:text-xl mb-5 md:mr-2">Nome:</p>
+                    <p className="text-base mb-5 md:text-xl">{item.payeer.name}</p>
+                </div>
+                <div className="flex flex-col md:flex-row">
+                    <p className="font-bold text-base md:text-xl mb-5 md:mr-2">RG:</p>
+                    <p className="text-base mb-5 md:text-xl">{item.payeer.document}</p>
+                </div>
+                <div className="flex flex-col md:flex-row">
+                    <p className="font-bold text-base md:text-xl mb-5 md:mr-2">Valor:</p>
+                    <p className="text-base md:text-xl mb-5">
+                        {item.currency}:${" "}
+                        {parseFloat(item.value.toString()).toLocaleString("pt-BR", {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2,
+                        })}
+                    </p>
+                </div>
+                <div className="flex flex-col md:flex-row">
+                    <p className="font-bold text-base md:text-xl mb-5 md:mr-2">Data:</p>
+                    <p className="text-base md:text-xl">{item.date}</p>
+                </div>
             </div>
         </div>
     );
@@ -65,7 +73,7 @@ const TransferList = () => {
                     Transferências
                 </h1>
             </div>
-            <div className="flex flex-col w-[95%] h-full bg-background-dark pt-5">
+            <div className="flex flex-col w-[75%] h-full bg-background-dark pt-5">
                 <div className="flex flex-row justify-between items-center w-full px-5 mb-3">
                     <input
                         className="flex-1 h-12 bg-white border border-secondary rounded px-3 text-background-dark transition-all duration-300 focus:border-primary-hover focus:outline-none"
