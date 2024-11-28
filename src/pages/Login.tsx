@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useBanco } from "../contexts/BancoContext";
 
 
 const LoginScreen: React.FC = () => {
+    const navigate = useNavigate();
     const { signIn, isLoading } = useBanco();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -41,7 +43,9 @@ const LoginScreen: React.FC = () => {
         event.preventDefault();
         if (validateInputs()) {
             const result = await signIn({ email, password });
-            if (!result) {
+            if (result) {
+                navigate('/home'); 
+            } else {
                 setPasswordError("Dados Incorretos. Por favor, tente novamente.");
             }
         }

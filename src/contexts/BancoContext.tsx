@@ -28,9 +28,7 @@ export function BancoProvider({ children }: PropsWithChildren) {
     }): Promise<boolean> => {
         try {
             setIsLoading(true);
-            console.log("aaaaaaaaaaaaaaaaaa")
-            console.log(email)
-            console.log(password)
+            console.log(isLoggedIn,"primeiro");
             const response = await axios.post(
                 "https://qf5k9fspl0.execute-api.us-east-1.amazonaws.com/default/login",
                 {
@@ -55,7 +53,8 @@ export function BancoProvider({ children }: PropsWithChildren) {
             setIsLoading(false);
         }
     };
-
+    console.log(user)
+    console.log(token,"segundo");
     return (
         <BancoContext.Provider
             value={{
