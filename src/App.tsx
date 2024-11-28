@@ -1,8 +1,7 @@
 import { BancoProvider } from './contexts/BancoContext'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
 import ProtectedRoute from './routes/ProtectedRoute';
-import LoginScreen from './pages/Login';
+import LoginScreen from './pages/LoginScreen';
 import Home from './pages/Home';
 
 const App = () => {
