@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useBanco } from "../contexts/BancoContext";
-import { useNavigate } from "react-router-dom";
-import { IoHome } from "react-icons/io5";
+import HomeButton from "../components/HomeButton";
 
 interface Transaction {
     value: number;
@@ -17,7 +16,6 @@ const TransferList = () => {
     const { fetchTransactionHistory, transactionHistory } = useBanco();
     const [filter, setFilter] = useState("");
     const [filterType, setFilterType] = useState("nome");
-    const navigate = useNavigate();
 
     //Ao montar a pagina, busca as transações
     useEffect(() => {
@@ -86,7 +84,6 @@ const TransferList = () => {
                         <option value="data">Data</option>
                     </select>
                 </div>
-
                 <div className="flex-1 w-full overflow-auto">
                     {filteredTransactions.map((item, index) => (
                         <div
@@ -97,18 +94,7 @@ const TransferList = () => {
                         </div>
                     ))}
                 </div>
-
-                <div className="w-full fixed bottom-0 left-0 flex justify-center p-5">
-                    <button
-                        onClick={() => navigate("/home")}
-                        className="flex flex-row items-center bg-secondary px-10 py-2 rounded transition-all duration-300 hover:bg-primary-hover"
-                    >
-                        <IoHome size={24} className="text-text-light" />
-                        <span className="text-text-light font-bold ml-2">
-                            Home
-                        </span>
-                    </button>
-                </div>
+                <HomeButton />
             </div>
         </div>
     );
