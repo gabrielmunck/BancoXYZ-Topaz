@@ -8,6 +8,8 @@ interface BancoContextData {
     isLoading: boolean;
     user: any;
     token: string;
+    fetchAccountInfo: () => void;
+    accountInfo: { currency: string; accountBalance: number };
 }
 
 const BancoContext = createContext<BancoContextData>({} as BancoContextData);
@@ -17,6 +19,32 @@ export function BancoProvider({ children }: PropsWithChildren) {
     const [isLoading, setIsLoading] = useState(false);
     const [user, setUser] = useState({ name: "", email: "" });
     const [token, setToken] = useState("");
+    const [accountInfo, setAccountInfo] = useState({
+        currency: "",
+        accountBalance: 0,
+    });
+
+     // Função que obtem o dinheiro em conta usando o token do usuario
+    const fetchAccountInfo = async () => {
+        try {
+            const response = await axios.get(
+                "https://2k0ic4z7s5.execute-api.us-east-1.amazonaws.com/default/balance",
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            );
+            setAccountInfo({
+                ...response.data,
+                accountBalance: parseFloat(
+                    response.data.accountBalance
+                ).toFixed(2),
+            });
+        } catch (error) {
+            console.log("Erro", "Falha ao obter informações da conta");
+        }
+    };
 
     // Função que obtem e efetua o login do usuario
     const signIn = async ({
@@ -53,8 +81,6 @@ export function BancoProvider({ children }: PropsWithChildren) {
             setIsLoading(false);
         }
     };
-    console.log(user)
-    console.log(token,"segundo");
     return (
         <BancoContext.Provider
             value={{
@@ -69,6 +95,8 @@ export function BancoProvider({ children }: PropsWithChildren) {
                 isLoading,
                 user,
                 token,
+                fetchAccountInfo,
+                accountInfo,
             }}
         >
             {children}
