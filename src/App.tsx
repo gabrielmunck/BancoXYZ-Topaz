@@ -4,6 +4,7 @@ import ProtectedRoute from './routes/ProtectedRoute';
 import LoginScreen from './pages/LoginScreen';
 import Home from './pages/Home';
 import TransferList from './pages/TransferList';
+import NewTransfer from './pages/NewTransfer';
 
 const App = () => {
   return (
@@ -32,7 +33,7 @@ const App = () => {
             path="/newtransfer"
             element={
               <ProtectedRoute>
-                <TransferList />
+                <NewTransfer />
               </ProtectedRoute>
             }
           />
