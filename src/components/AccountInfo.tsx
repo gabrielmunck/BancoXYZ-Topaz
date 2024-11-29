@@ -17,7 +17,7 @@ const AccountInfo = () => {
     return (
         <div className="w-full">
             <div className="flex flex-col items-center justify-center w-full h-auto">
-                <div className="mt-5 bg-background-darker w-full lg:max-w-[50%] p-5 rounded-lg">
+                <div className="mt-5 bg-background-darker w-full lg:max-w-[40%] p-5 rounded-lg">
                     <span className="text-lg text-secondary font-bold">
                         Seu saldo:{" "}
                     </span>

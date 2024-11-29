@@ -40,9 +40,9 @@ const Home = () => {
                         >
                             Olá, {user.name}!
                         </h2>
-                        <div className="flex flex-col items-center justify-between w-full h-auto">
+                        <div className="flex flex-col items-center justify-between w-full h-auto mb-10">
                             <AccountInfo />
-                            <div className="w-full lg:max-w-[50%] pt-10 rounded-lg">
+                            <div className="w-full lg:max-w-[40%] pt-10 rounded-lg">
                                 <button
                                     onClick={handleNewTransfer}
                                     className="w-full mx-auto bg-primary hover:bg-primary-hover py-3  rounded"
@@ -55,7 +55,7 @@ const Home = () => {
                                     </div>
                                 </button>
                             </div>
-                            <div className="w-full lg:max-w-[50%] pt-10 rounded-lg">
+                            <div className="w-full lg:max-w-[40%] pt-10 rounded-lg">
                                 <button
                                     onClick={handleTransferList}
                                     className="w-full mx-auto bg-primary hover:bg-primary-hover py-3  rounded"
@@ -69,10 +69,13 @@ const Home = () => {
                                 </button>
                             </div>
                         </div>
+                        {/* <div className="flex justify-center items-center w-full h-40 bg-red-300  rounded-lg">
+                            
+                        </div> */}
                         <div className="pt-20 w-full flex">
                             <button
                                 onClick={signOut}
-                                className="max-w-[50%] w-full mx-auto bg-primary hover:bg-primary-hover py-1.5 rounded"
+                                className="max-w-[40%] w-full mx-auto bg-primary hover:bg-primary-hover py-1.5 rounded"
                             >
                                 <span className="text-text-light text-xl font-bold text-center">
                                     Sair
