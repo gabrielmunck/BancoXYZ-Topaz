@@ -28,6 +28,14 @@ const App = () => {
               </ProtectedRoute>
             }
           />
+          <Route
+            path="/newtransfer"
+            element={
+              <ProtectedRoute>
+                <TransferList />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </Router>
     </BancoProvider>

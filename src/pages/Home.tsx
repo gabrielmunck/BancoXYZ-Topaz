@@ -2,6 +2,7 @@ import { useBanco } from "../contexts/BancoContext";
 import Header from "../components/Header";
 import AccountInfo from "../components/AccountInfo";
 import { useNavigate } from "react-router-dom";
+import { RiFileListLine, RiCashLine } from "react-icons/ri";
 
 const Home = () => {
     const { signOut, user } = useBanco();
@@ -9,6 +10,10 @@ const Home = () => {
 
     const handleTransferList = () => {
         navigate("/transferlist");
+    };
+
+    const handleNewTransfer = () => {
+        navigate("/newtransfer");
     };
 
     return (
@@ -39,16 +44,32 @@ const Home = () => {
                             <AccountInfo />
                             <div className="w-full lg:max-w-[50%] pt-10 rounded-lg">
                                 <button
+                                    onClick={handleNewTransfer}
+                                    className="w-full mx-auto bg-primary hover:bg-primary-hover py-3  rounded"
+                                >
+                                    <div className="flex items-center justify-center gap-2">
+                                        <RiCashLine className="text-text-light w-6 h-6" />
+                                        <p className="text-text-light text-lg font-bold text-center tracking-wider">
+                                            Nova Transferência
+                                        </p>
+                                    </div>
+                                </button>
+                            </div>
+                            <div className="w-full lg:max-w-[50%] pt-10 rounded-lg">
+                                <button
                                     onClick={handleTransferList}
                                     className="w-full mx-auto bg-primary hover:bg-primary-hover py-3  rounded"
                                 >
-                                    <p className="text-text-light text-lg font-bold text-center tracking-wider">
-                                        Lista de Transferências
-                                    </p>
+                                    <div className="flex items-center justify-center gap-2">
+                                        <RiFileListLine className="text-text-light w-6 h-6" />
+                                        <p className="text-text-light text-lg font-bold text-center tracking-wider">
+                                            Lista de Transferências
+                                        </p>
+                                    </div>
                                 </button>
                             </div>
                         </div>
-                        <div className="pt-5 w-full flex">
+                        <div className="pt-20 w-full flex">
                             <button
                                 onClick={signOut}
                                 className="max-w-[50%] w-full mx-auto bg-primary hover:bg-primary-hover py-1.5 rounded"
