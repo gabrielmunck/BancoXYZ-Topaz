@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useBanco } from "../contexts/BancoContext";
 import Header from "../components/Header";
+import AnimatedLoading from "../components/AnimatedLoading";
 
 const LoginScreen: React.FC = () => {
     const navigate = useNavigate();
@@ -58,7 +59,7 @@ const LoginScreen: React.FC = () => {
                     <Header/>
                     <div className="flex justify-center w-full px-5 ">
                         {isLoading ? (
-                            <div className="flex flex-col">Carregando...</div>
+                            <AnimatedLoading />
                         ) : (
                             <form
                                 className="flex flex-col w-full md:w-1/2"

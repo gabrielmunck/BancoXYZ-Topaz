@@ -22,9 +22,9 @@ const Home = () => {
     return (
         <div className="flex flex-1 items-center justify-center w-full h-full bg-background-darker">
             <div className="flex flex-1 w-[95%] h-full bg-background-dark">
-                <div className="absolute inset-0 top-5 pt-10 h-screen overflow-y-hidden">
+                <div className="absolute inset-0 top-36 pt-10 h-screen overflow-y-hidden">
                     <svg
-                        className="absolute opacity-5 -left-[200px] h-screen overflow-visible"
+                        className="absolute opacity-5 -left-[200px] h-full overflow-visible"
                         viewBox="0 0 256 512"
                         fill="white"
                         xmlns="http://www.w3.org/2000/svg"

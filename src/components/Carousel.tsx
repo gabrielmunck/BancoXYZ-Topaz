@@ -30,17 +30,17 @@ const carouselItems: CarouselItem[] = [
 export default function Carousel() {
     return (
         <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={30}
-        slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-        autoplay={{
-            delay: 3000, // 3 seconds between slides
-            disableOnInteraction: false, // continues autoplay after user interaction
-        }}
-        className="custom-swiper"
- >
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true }}
+            autoplay={{
+                delay: 2000, //
+                disableOnInteraction: false,
+            }}
+            className="custom-swiper"
+        >
             {carouselItems.map((item, index) => (
                 <SwiperSlide key={index}>
                     <div className="w-full h-full">
