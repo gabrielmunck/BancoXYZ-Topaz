@@ -1,7 +1,10 @@
 import { useBanco } from "../contexts/BancoContext";
+import { useNavigate } from "react-router-dom";
+
 import Header from "../components/Header";
 import AccountInfo from "../components/AccountInfo";
-import { useNavigate } from "react-router-dom";
+import Carousel from "../components/Carousel";
+
 import { RiFileListLine, RiCashLine } from "react-icons/ri";
 
 const Home = () => {
@@ -18,8 +21,8 @@ const Home = () => {
 
     return (
         <div className="flex flex-1 items-center justify-center w-full h-full bg-background-darker">
-            <div className="flex flex-1 w-[95%] h-screen bg-background-dark">
-                <div className="absolute inset-0 pt-10 h-screen overflow-y-hidden">
+            <div className="flex flex-1 w-[95%] h-full bg-background-dark">
+                <div className="absolute inset-0 top-5 pt-10 h-screen overflow-y-hidden">
                     <svg
                         className="absolute opacity-5 -left-[200px] h-screen overflow-visible"
                         viewBox="0 0 256 512"
@@ -31,7 +34,7 @@ const Home = () => {
                 </div>
                 <div className="flex flex-col w-full z-50">
                     <Header />
-                    <div className="flex flex-col px-10 pt-20">
+                    <div className="flex flex-col px-10 pt-14">
                         <h2
                             className="text-text-light text-center text-4xl font-bold mb-10"
                             style={{
@@ -69,10 +72,10 @@ const Home = () => {
                                 </button>
                             </div>
                         </div>
-                        {/* <div className="flex justify-center items-center w-full h-40 bg-red-300  rounded-lg">
-                            
-                        </div> */}
-                        <div className="pt-20 w-full flex">
+                        <div className="flex justify-center items-center w-full h-auto  rounded-lg">
+                            <Carousel />
+                        </div>
+                        <div className="py-10 w-full flex">
                             <button
                                 onClick={signOut}
                                 className="max-w-[40%] w-full mx-auto bg-primary hover:bg-primary-hover py-1.5 rounded"
