@@ -9,11 +9,11 @@
 
     .custom-swiper .swiper-button-next,
     .custom-swiper .swiper-button-prev {
-        @apply !text-white !bg-black/50 !p-8 !rounded-full !scale-50;
+        @apply !text-white !bg-black/20 !p-10 !rounded-full !scale-50;
     }
 
     .custom-swiper .swiper-pagination-bullet {
-        @apply !bg-white !w-3 !h-3 !opacity-0;
+        @apply bg-white !opacity-0;
     }
 
     .custom-swiper .swiper-pagination-bullet-active {

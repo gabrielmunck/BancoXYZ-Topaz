@@ -31,7 +31,7 @@ const TransferList = () => {
                     <p className="text-base mb-1.5 md:mb-5 md:text-xl">{item.payeer.name}</p>
                 </div>
                 <div className="flex flex-col md:flex-row">
-                    <p className="font-bold text-base md:text-xl mb-1.5 md:mb-5 md:mr-2">RG:</p>
+                    <p className="font-bold text-base md:text-xl mb-1.5 md:mb-5 md:mr-2">Documento:</p>
                     <p className="text-base mb-1.5 md:mb-5 md:text-xl">{item.payeer.document}</p>
                 </div>
                 <div className="flex flex-col md:flex-row">

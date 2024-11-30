@@ -62,7 +62,7 @@ const LoginScreen: React.FC = () => {
                             <AnimatedLoading />
                         ) : (
                             <form
-                                className="flex flex-col w-full md:w-1/2"
+                                className="flex flex-col w-full md:w-[40%]"
                                 onSubmit={handleSignIn}
                             >
                                 <label className="text-lg text-text-light font-bold mb-2.5">
@@ -108,8 +108,8 @@ const LoginScreen: React.FC = () => {
                         )}
                     </div>
 
-                    <div className="h-[60px] bg-secondary flex justify-center items-center">
-                        <p className="text-text-light text-base font-thin cursor-pointer select-none">
+                    <div className="h-[60px] bg-secondary flex justify-center items-center" onClick={() => window.open('https://www.linkedin.com/in/gabrielmunck/', '_blank')}>
+                        <p className="text-text-light font-thin text-lg cursor-pointer select-none">
                             Precisa de ajuda? Click aqui e fale conosco.
                         </p>
                     </div>

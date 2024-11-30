@@ -47,9 +47,9 @@ export default function Carousel() {
                         <img
                             src={item.image}
                             alt={`Slide ${index + 1}`}
-                            className="w-full h-[300px] object-cover rounded-t-lg"
+                            className="w-full h-[300px] object-cover rounded-lg"
                         />
-                        <p className="text-center text-md md:text-xl font-bold p-4 bg-white rounded-b-lg shadow-md">
+                        <p className="text-center text-text-light text-md md:text-xl font-bold p-4 rounded-b-lg ">
                             {item.text}
                         </p>
                     </div>
