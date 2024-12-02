@@ -1,6 +1,5 @@
 import { Navigate } from "react-router-dom";
-import { useBanco } from "../contexts/BancoContext";
-import { ReactNode, useEffect } from "react";
+import { useBanco } from "../contexts/BancoContext";;
 
 interface ProtectedRouteProps {
     children: JSX.Element;

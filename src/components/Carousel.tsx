@@ -4,9 +4,9 @@ import image1 from "../assets/imagem1.jpg";
 import image2 from "../assets/imagem2.jpg";
 import image3 from "../assets/imagem3.jpg";
 
-// import "swiper/css";
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 interface CarouselItem {
     image: any;
@@ -31,6 +31,7 @@ const carouselItems: CarouselItem[] = [
 export default function Carousel() {
     return (
         <Swiper
+            data-testid="mock-carousel"
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={30}
             slidesPerView={1}

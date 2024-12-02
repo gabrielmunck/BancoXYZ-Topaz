@@ -24,8 +24,8 @@ const AccountInfo = () => {
                     <div className="flex justify-between items-center my-2.5">
                         <span className="text-2xl text-text-light font-bold mr-2.5">
                             {isVisible
-                                ? `${accountInfo.currency}: ${parseFloat(accountInfo.accountBalance.toString()).
-                                toLocaleString('pt-BR', {minimumFractionDigits: 2,maximumFractionDigits: 2,})}`
+                                ? `${accountInfo.currency}: 
+                                ${parseFloat(accountInfo.accountBalance.toString()).toLocaleString('pt-BR', {minimumFractionDigits: 2,maximumFractionDigits: 2,})}`
                                 : "********"}
                         </span>
                         <button
