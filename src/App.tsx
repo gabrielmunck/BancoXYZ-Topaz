@@ -1,3 +1,4 @@
+import React from 'react';
 import { BancoProvider } from './contexts/BancoContext'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProtectedRoute from './routes/ProtectedRoute';
