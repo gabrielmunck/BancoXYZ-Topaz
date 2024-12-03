@@ -131,7 +131,7 @@ const NewTransfer = () => {
                             htmlFor="document"
                             className="block text-text-light text-lg font-bold mb-2"
                         >
-                            RG
+                            Documento
                         </label>
                         <input
                             id="document"
