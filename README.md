@@ -1,46 +1,50 @@
-# Getting Started with Create React App
+# Banco Topaz XYZ
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📋 Sobre o Projeto
+Este projeto foi desenvolvido utilizando Vite + React e depois foi passado para Create-React-App. Ele representa uma aplicação moderna, porem de facil utilização para serviços bancários digitais.
 
-## Available Scripts
+## 🚀 Tecnologias Utilizadas
+- React.js 18.3.1
+- TypeScript 4.9.5
+- Tailwind CSS 3.4.15
+- Jest e React Testing Library
+- Axios 1.7.8
+- React Router DOM 7.0.1
+- React Icons 5.3.0
+- Swiper 11.1.15 (Carrossel)
 
-In the project directory, you can run:
+## 💻 Pré-requisitos
+- Node.js (versão 14 ou superior)
+- NPM ou Yarn
 
-### `npm start`
+## 🔧 Instalação
+1. Clone o repositório:
+git clone https://github.com/gabrielmunck/BancoXYZ-Topaz.git
+cd bancotopazxyz
+npm install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🏃 Scripts Disponíveis
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Iniciar o Projeto
+Para rodar o projeto em modo de desenvolvimento:
+npm start
 
-### `npm test`
+O projeto estará disponível em [http://localhost:3000](http://localhost:3000)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Testes
+Para executar os testes unitários:
+npm test
 
-### `npm run build`
+Para verificar a cobertura de testes:
+npm test -- --coverage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Build
+Para gerar a versão de produção:
+npm run build
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🧪 Testes
+O projeto utiliza Jest e React Testing Library para testes. A estrutura de testes inclui:
+- Testes unitários de componentes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 👥 Autor
+- Gabriel Munck - [GitHub](https://github.com/gabrielmunck)
